@@ -162,7 +162,8 @@ type PolymorphicComponentPropWithRef<
 > = PolymorphicComponentProp<C, Props> & { ref?: PolymorphicRef<C> };
 type PolymorphicRef<C extends React.ElementType> =
   React.ComponentPropsWithRef<C>['ref'];
-type BoxComponent<C extends React.ElementType> = PolymorphicComponentPropWithRef<C>;
+type BoxComponent<C extends React.ElementType> =
+  PolymorphicComponentPropWithRef<C>;
 export type BoxProps = <C extends React.ElementType = 'div'>(
   props: BoxComponent<C> & LayouterDirectives
 ) => React.ReactElement | null;
