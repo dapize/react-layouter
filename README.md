@@ -7,6 +7,12 @@
 
 # React-Layouter
 
+[![CI](https://github.com/dapize/react-layouter/workflows/CI/badge.svg)](https://github.com/dapize/react-layouter/actions?query=workflow:"CI")
+[![npm version](https://img.shields.io/npm/v/react-layouter.svg)](https://www.npmjs.org/package/react-layouter)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-layouter)
+![types included](https://badgen.net/npm/types/react-layouter)
+
 Es un **componente** que proporciona el uso de la librería [Layouter.js](https://github.com/dapize/layouter.js) en [React JS](https://reactjs.org/).
 
 ## 🔧 Instalación
@@ -22,8 +28,8 @@ yarn add react-layouter
 1. **Primero** hay que declarar la inicialización de la librería, con el `<Provider>`, ahí es donde se puede declarar la [configuración](https://github.com/dapize/layouter.js/blob/master/DOCS.md):
 
 ```js
-import { Provider } from "react-layouter";
-import App from "./App";
+import { Provider } from 'react-layouter';
+import App from './App';
 
 const layouterConfig = {
   // Aquí se agrega la configuración de la librería
@@ -40,7 +46,7 @@ const layouterConfig = {
 2. **Luego**, se usa el componente `<Box>` en donde se requiera, en otro componente por ejemplo:
 
 ```js
-import { Box } from "react-layouter";
+import { Box } from 'react-layouter';
 
 const App = () => {
   return (
@@ -53,11 +59,11 @@ const App = () => {
 export default App;
 ```
 
-**Y listo!**, eso es todo lo que necesitamos para usar el **layouter** en React.
+**Y listo!**, eso es todo lo que necesitamos para usar el **layouter** en React. Solo usa el componente Box por todo lugar donde lo requieras.
 
 ## ⚡ Directivas
 
-Son practicamente las mismas que la misma [librería](https://github.com/dapize/layouter.js), solo que se an cambiado las directivas de tipo `kebab-case` por `camelCase`, veamos:
+Son practicamente las mismas que la [librería](https://github.com/dapize/layouter.js), solo que se an cambiado las directivas de tipo `kebab-case` por `camelCase`, veamos:
 
 | Nombre                                                                               | Alias                 | Ejemplos                                                                                  | Descripción                                                                                                                                                                                                |
 | ------------------------------------------------------------------------------------ | --------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
