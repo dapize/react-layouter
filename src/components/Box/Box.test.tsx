@@ -4,36 +4,46 @@ import Box from './Box';
 import Provider from '../Provider';
 
 describe('<Box/>', () => {
-  it('Render', () => {
-    const readyCallBack = jest.fn(() => {
-      const node = screen.getByText('content');
-      expect(node).toBeTruthy();
-      expect(node.className).toEqual('h-10 w-10');
-      expect(node.tagName.toLowerCase()).toEqual('div');
-    });
-
+  it('Simple', () => {
     render(
-      <Provider config={{ ready: readyCallBack }}>
-        <Box h="10" w="10" href="#">
+      <Provider>
+        <Box w="100" h="100">
           content
         </Box>
       </Provider>
     );
+
+    const content = screen.getByText('content');
+    expect(content.classList.contains('w-100')).toBeTruthy();
+    expect(content.classList.contains('h-100')).toBeTruthy();
+  });
+
+  it('Simple with className', () => {
+    render(
+      <Provider>
+        <Box marginTop="10 20@sm" className="square" b="40">
+          content
+        </Box>
+      </Provider>
+    );
+
+    const content = screen.getByText('content');
+    expect(content.classList.contains('mt-10')).toBeTruthy();
+    expect(content.classList.contains('mt-20@sm')).toBeTruthy();
+    expect(content.classList.contains('b-40')).toBeTruthy();
+    expect(content.classList.contains('square')).toBeTruthy();
   });
 
   it('Render with "AS"', () => {
-    const readyCallBack = jest.fn(() => {
-      const node = screen.getByText('Link');
-      expect(node.tagName.toLowerCase()).toEqual('a');
-      expect(node.getAttribute('href')).toEqual('http://www.web.com');
-    });
-
     render(
-      <Provider config={{ ready: readyCallBack }}>
+      <Provider>
         <Box as="a" href="http://www.web.com">
           Link
         </Box>
       </Provider>
     );
+    const node = screen.getByText('Link');
+    expect(node.tagName.toLowerCase()).toEqual('a');
+    expect(node.getAttribute('href')).toEqual('http://www.web.com');
   });
 });

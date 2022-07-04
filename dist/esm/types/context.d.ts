@@ -1,8 +1,6 @@
 /// <reference types="react" />
-import React, { FC } from 'react';
-import { IConfigUser } from 'layouter.js';
-
-interface IDirectives {
+export declare type TDirectiveName = 'd' | 'display' | 'c' | 'cols' | 'p' | 'pad' | 'padding' | 'pt' | 'padt' | 'paddingTop' | 'pr' | 'padr' | 'paddingRight' | 'pb' | 'padb' | 'paddingBottom' | 'pl' | 'padl' | 'paddingLeft' | 'px' | 'padx' | 'paddingX' | 'py' | 'pady' | 'paddingY' | 'm' | 'mar' | 'margin' | 'mt' | 'mart' | 'marginTop' | 'mr' | 'marr' | 'marginRight' | 'mb' | 'marb' | 'marginBottom' | 'ml' | 'marl' | 'marginLeft' | 'mx' | 'marx' | 'marginX' | 'my' | 'mary' | 'marginY' | 'fx' | 'flex' | 'mxw' | 'maxWidth' | 'mxh' | 'maxHeight' | 'miw' | 'minWidth' | 'mih' | 'minHeight' | 'w' | 'wdh' | 'width' | 'h' | 'hgt' | 'height' | 'pos' | 'position' | 't' | 'top' | 'r' | 'right' | 'b' | 'bottom' | 'l' | 'left';
+export interface IDirectives {
     d?: string;
     display?: string;
     c?: string;
@@ -76,24 +74,5 @@ interface IDirectives {
     l?: string;
     left?: string;
 }
-
-declare type AsProp<C extends React.ElementType> = {
-    as?: C;
-};
-declare type PropsToOmit<C extends React.ElementType, P> = keyof (AsProp<C> & P);
-declare type PolymorphicComponentProp<C extends React.ElementType, Props = Record<string, unknown>> = React.PropsWithChildren<Props & AsProp<C>> & Omit<React.ComponentPropsWithoutRef<C>, PropsToOmit<C, Props>>;
-declare type PolymorphicComponentPropWithRef<C extends React.ElementType, Props = Record<string, unknown>> = PolymorphicComponentProp<C, Props> & {
-    ref?: PolymorphicRef<C>;
-};
-declare type PolymorphicRef<C extends React.ElementType> = React.ComponentPropsWithRef<C>['ref'];
-declare type BoxComponent<C extends React.ElementType> = PolymorphicComponentPropWithRef<C>;
-declare type BoxProps = <C extends React.ElementType = 'div'>(props: BoxComponent<C> & IDirectives) => React.ReactElement | null;
-declare const Box: BoxProps;
-
-interface IProvider {
-    config?: Partial<IConfigUser>;
-    children: React.ReactNode;
-}
-declare const Provider: FC<IProvider>;
-
-export { Box, BoxProps, IProvider, Provider };
+declare const LayouterContext: import("react").Context<Record<TDirectiveName, (values: string, insertStyles: boolean) => Error | import("layouter.js/dist/helpers/createStyles").IStyles> | null>;
+export default LayouterContext;

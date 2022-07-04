@@ -1,8 +1,13 @@
 <div align="center">
     <p>
-        <img src="header.png" alt="React Layouter"/>
+      <img src="header.png" alt="React Layouter"/>
     </p>
-    <strong>⚡️ Layouter en React JS, ¡fantástico! ⚡️</strong>
+    <p>
+      <strong>⚡️ Layouter in React JS, ¡fantastic! ⚡️</strong>
+    </p>
+    <p>
+        <a href="README.md"><img src="en_US.png" alt="English Language"/> English</a> — <a href="README-es_ES.md"><img src="es_ES.png" alt="Idioma Español"/> Español</a>
+    </p>
 </div>
 
 # React-Layouter
@@ -13,9 +18,9 @@
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-layouter)
 ![types included](https://badgen.net/npm/types/react-layouter)
 
-Es un **componente** que proporciona el uso de la librería [Layouter.js](https://github.com/dapize/layouter.js) en [React JS](https://reactjs.org/).
+Is a **component** that give us the use of the library [Layouter.js](https://github.com/dapize/layouter.js) in [React JS](https://reactjs.org/).
 
-## 🔧 Instalación
+## 🔧 Installation
 
 ```js
 npm install react-layouter
@@ -23,17 +28,17 @@ npm install react-layouter
 yarn add react-layouter
 ```
 
-## ✨ Uso
+## ✨ How Use It?
 
-1. **Primero** hay que declarar la inicialización de la librería, con el `<Provider>`, ahí es donde se puede declarar la [configuración](https://github.com/dapize/layouter.js/blob/master/DOCS.md):
+1. **First** we have to init the library, with the `<Provider>`, there if where we can declare the [configuration](https://github.com/dapize/layouter.js/blob/master/DOCS.md):
 
 ```js
 import { Provider } from 'react-layouter';
 import App from './App';
 
 const layouterConfig = {
-  // Aquí se agrega la configuración de la librería
-  // es decir, los breakpoints, el prefijo, etc
+  // Here we can add the configuration of the library
+  // I mean: los breakpoints, the prefix, etc
 };
 
 <Provider config={layouterConfig}>
@@ -41,9 +46,9 @@ const layouterConfig = {
 </Provider>;
 ```
 
-> Se requiere que esté en root, para que alimente a toda la aplicación.
+> Is require to be in root, so that I feed the whole application.
 
-2. **Luego**, se usa el componente `<Box>` en donde se requiera, en otro componente por ejemplo:
+2. **Second and finally**, you have to use the component `<Box>` where you want, in other component for example:
 
 ```js
 import { Box } from 'react-layouter';
@@ -51,7 +56,7 @@ import { Box } from 'react-layouter';
 const App = () => {
   return (
     <Box w="100" h="100" c="13/15">
-      contenido
+      content
     </Box>
   );
 };
@@ -59,47 +64,47 @@ const App = () => {
 export default App;
 ```
 
-**Y listo!**, eso es todo lo que necesitamos para usar el **layouter** en React. Solo usa el componente Box por todo lugar donde lo requieras.
+**That's it!**, that is all of we have to do to use the **layouter** in React. Just use the component `Box` wherever you want.
 
-## ⚡ Directivas
+## ⚡ Directives
 
-Son practicamente las mismas que la [librería](https://github.com/dapize/layouter.js), solo que se an cambiado las directivas de tipo `kebab-case` por `camelCase`, veamos:
+Are practically the same of the [library](https://github.com/dapize/layouter.js), just the names was changed from `kebab-case` to `camelCase`, let see:
 
-| Nombre                                                                               | Alias                 | Ejemplos                                                                                  | Descripción                                                                                                                                                                                                |
-| ------------------------------------------------------------------------------------ | --------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Cols](https://github.com/dapize/layouter.js/blob/master/DOCS.md#cols)               | `c`                   | `cols="13/15"`, `c="5/10"`                                                                | Determina las columnas, osea el 'width' de manera porcentual.                                                                                                                                              |
-| [d](https://github.com/dapize/layouter.js/blob/master/DOCS.md#display)               | `display`             | `d="bl"`, `display="inline"`                                                              | Determina el **display** que tendrá el nodo.                                                                                                                                                               |
-| [Mart](https://github.com/dapize/layouter.js/blob/master/DOCS.md#mart)               | `mt`, `marginTop`     | `mart="10"`, `mt="20"`, `marginTop="12"`                                                  | Determina el **margen superior** de un nodo.                                                                                                                                                               |
-| [Marr](https://github.com/dapize/layouter.js/blob/master/DOCS.md#marr-marb-marl)     | `mr`, `marginRight`   | `marr="2/15"`, `mr="5/10"`, `marginRight="3/5"`                                           | Determinar el **margen derecho** de un nodo.                                                                                                                                                               |
-| [Marb](https://github.com/dapize/layouter.js/blob/master/DOCS.md#marr-marb-marl)     | `mb`, `marginBottom`  | `marb="30"`, `mb="50"`, `marginBottom="25"`                                               | Determinar el **margen inferior** de un nodo.                                                                                                                                                              |
-| [Marl](https://github.com/dapize/layouter.js/blob/master/DOCS.md#marr-marb-marl)     | `ml`, `marginLeft`    | `marl="3/15"`, `ml="5/10"`, `marginLeft="3/5"`                                            | Determinar el **margen izquierdo** de un nodo.                                                                                                                                                             |
-| [Mar](https://github.com/dapize/layouter.js/blob/master/DOCS.md#mar)                 | `m`, `margin`         | `mar="20-2/15-30-3/15"`, `m="20-2/15-30-3/15"`, `margin="20-2/15-30-3/15"`                | Es un shorthand de las directivas: [mart](https://github.com/dapize/layouter.js/blob/master/DOCS.md#mart), [marr, marb, y marl](https://github.com/dapize/layouter.js/blob/master/DOCS.md#marr-marb-marl). |
-| [Mary](https://github.com/dapize/layouter.js/blob/master/DOCS.md#mary-marx)          | `my`, `marginY`       | `mary="10"`, `my="20"`, `marginY="30"`                                                    | Determina el **margen superior e inferior al mismo tiempo** de un nodo.                                                                                                                                    |
-| [Marx](https://github.com/dapize/layouter.js/blob/master/DOCS.md#mary-marx)          | `mx`, `maringX`       | `marx="10"`, `mx="20"`, `marginX="30"`                                                    | Determina el **margen derecho e izquierdo al mismo tiempo** de un nodo.                                                                                                                                    |
-| [Padt](https://github.com/dapize/layouter.js/blob/master/DOCS.md#padt)               | `pt`, `paddingTop`    | `padt="10"`, `pt="20"`, `paddingTop="30"`                                                 | Determina el **padding superior** de un nodo.                                                                                                                                                              |
-| [Padr](https://github.com/dapize/layouter.js/blob/master/DOCS.md#padr-padb-padl)     | `pr`, `paddingRight`  | `padr="2/15"`, `pr="3/16"`, `paddingRight="4/17"`                                         | Determina el **padding derecho** de un nodo.                                                                                                                                                               |
-| [Padb](https://github.com/dapize/layouter.js/blob/master/DOCS.md#padr-padb-padl)     | `pb`, `paddingBottom` | `padb="30"`, `pb="40"`, `paddingBottom="50"`                                              | Determina el **padding inferior** de un nodo.                                                                                                                                                              |
-| [Padl](https://github.com/dapize/layouter.js/blob/master/DOCS.md#padr-padb-padl)     | `pl`, `paddingLeft`   | `padl="3/15"`, `pl="4/16"`, `paddingLeft="5/17"`                                          | Determina el **padding izquierdo** de un nodo.                                                                                                                                                             |
-| [Pad](https://github.com/dapize/layouter.js/blob/master/DOCS.md#pad)                 | `p`, `padding`        | `pad="20-2/15-30-3/15"`, `p="20-2/15-30-3/15"`, `padding="20-2/15-30-3/15"`               | Es un shorthand de las directivas: [padt](https://github.com/dapize/layouter.js/blob/master/DOCS.md#padt), [padr, padb, y padl](https://github.com/dapize/layouter.js/blob/master/DOCS.md#padr-padb-padl). |
-| [Pady](https://github.com/dapize/layouter.js/blob/master/DOCS.md#pady-padx)          | `py`, `paddingY`      | `pady="10"`, `py="20"`, `paddingY="30"`                                                   | Determina el **padding superior e inferior al mismo tiempo** de un nodo.                                                                                                                                   |
-| [Padx](https://github.com/dapize/layouter.js/blob/master/DOCS.md#pady-padx)          | `px`, `paddingX`      | `padx="10"`, `px="20"`, `paddingX="30`                                                    | Determina el **padding derecho e izquierdo al mismo tiempo** de un nodo.                                                                                                                                   |
-| [Flex](https://github.com/dapize/layouter.js/blob/master/DOCS.md#flex)               | `fx`                  | `flex="jc:ce ai:fs fd:co"`, `flex="jc:fe ai:fs`, `fx="align-items:center flex-wrap:wrap"` | Determina el **display flex** del nodo y sus derivados.                                                                                                                                                    |
-| [Wdh](https://github.com/dapize/layouter.js/blob/master/DOCS.md#width)               | `w`, `width`          | `wdh="100"`, `w="200"`, `width="300"`                                                     | Determina el **ancho** del nodo en píxeles u otra [unidad de medida](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unidades-de-medida-definidas).                                              |
-| [Hgt](https://github.com/dapize/layouter.js/blob/master/DOCS.md#height)              | `h`, `height`         | `hgt="100"`, `h="200"`, `height="300"`                                                    | Determina el **alto** del nodo en píxeles u otra [unidad de medida](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unidades-de-medida-definidas).                                               |
-| [Mxw](https://github.com/dapize/layouter.js/blob/master/DOCS.md#maxwidth)            | `maxWidth`            | `mxw="200"`, `maxWidth="300"`                                                             | Determina el **máximo ancho** del nodo en píxeles u otra [unidad de medida](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unidades-de-medida-definidas).                                       |
-| [Mxh](https://github.com/dapize/layouter.js/blob/master/DOCS.md#maxheight)           | `maxHeight`           | `mxh="200"`, `maxHeight="300"`                                                            | Determina el **máximo alto** del nodo en píxeles u otra [unidad de medida](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unidades-de-medida-definidas).                                        |
-| [Miw](https://github.com/dapize/layouter.js/blob/master/DOCS.md#minwidth)            | `minWidth`            | `miw="300"`, `minWidth="400"`                                                             | Determina el **mínimo ancho** del nodo en píxeles u otra [unidad de medida](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unidades-de-medida-definidas).                                       |
-| [Mih](https://github.com/dapize/layouter.js/blob/master/DOCS.md#minheight)           | `minHeight`           | `mih="300"`, `minHeight="400"`                                                            | Determina el **mínimo alto** del nodo en píxeles u otra [unidad de medida](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unidades-de-medida-definidas).                                        |
-| [Pos](https://github.com/dapize/layouter.js/blob/master/DOCS.md#position)            | `position`            | `pos="re"`, `position="relative"`                                                         | Determina la **posición** del nodo.                                                                                                                                                                        |
-| [T](https://github.com/dapize/layouter.js/blob/master/DOCS.md#top-right-bottom-left) | `top`                 | `t="10"`, `top="20"`                                                                      | Determina el **top** del nodo en píxeles u otra [unidad de medida](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unidades-de-medida-definidas).                                                |
-| [R](https://github.com/dapize/layouter.js/blob/master/DOCS.md#top-right-bottom-left) | `right`               | `r="10"`, `right="20"`                                                                    | Determina el **right** del nodo en píxeles u otra [unidad de medida](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unidades-de-medida-definidas).                                              |
-| [B](https://github.com/dapize/layouter.js/blob/master/DOCS.md#top-right-bottom-left) | `bottom`              | `b="10"`, `bottom="20"`                                                                   | Determina el **bottom** del nodo en píxeles u otra [unidad de medida](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unidades-de-medida-definidas).                                             |
-| [L](https://github.com/dapize/layouter.js/blob/master/DOCS.md#top-right-bottom-left) | `left`                | `l="10"`, `left="20"`                                                                     | Determina el **left** del nodo en píxeles u otra [unidad de medida](DOCS.md#unidades-de-medida-definidas).                                                                                                 |
+| Name                                                                                 | Alias                  | Examples                                                                                  | Description                                                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------ | ---------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Cols](https://github.com/dapize/layouter.js/blob/master/DOCS.md#cols)               | `c`                    | `cols="13/15"`, `c="5/10"`                                                                | Determines the columns, that is, the 'width' as a percentage.                                                                                                                                                |
+| [d](https://github.com/dapize/layouter.js/blob/master/DOCS.md#display)               | `display`              | `d="bl"`, `display="inline"`                                                              | Determines the **display** that the node will have.                                                                                                                                                          |
+| [Mart](https://github.com/dapize/layouter.js/blob/master/DOCS.md#mart)               | `mt`, `margin-top`     | `mart="10"`, `mt="20"`, `margin-top="12"`                                                 | Determines the **top margin** of a node.                                                                                                                                                                     |
+| [Marr](https://github.com/dapize/layouter.js/blob/master/DOCS.md#marr-marb-marl)     | `mr`, `margin-right`   | `marr="2/15"`, `mr="5/10"`, `margin-right="3/5"`                                          | Determine the **right margin** of a node.                                                                                                                                                                    |
+| [Marb](https://github.com/dapize/layouter.js/blob/master/DOCS.md#marr-marb-marl)     | `mb`, `margin-bottom`  | `marb="30"`, `mb="50"`, `margin-bottom="25"`                                              | Determine the **bottom margin** of a node.                                                                                                                                                                   |
+| [Marl](https://github.com/dapize/layouter.js/blob/master/DOCS.md#marr-marb-marl)     | `ml`, `margin-left`    | `marl="3/15"`, `ml="5/10"`, `margin-left="3/5"`                                           | Determine the **left margin** of a node.                                                                                                                                                                     |
+| [Mar](https://github.com/dapize/layouter.js/blob/master/DOCS.md#mar)                 | `m`, `margin`          | `mar="20-2/15-30-3/15"`, `m="20-2/15-30-3/15"`, `margin="20-2/15-30-3/15"`                | It is a shorthand of the directives: [mart](https://github.com/dapize/layouter.js/blob/master/DOCS.md#mart), [marr, marb, y marl](https://github.com/dapize/layouter.js/blob/master/DOCS.md#marr-marb-marl). |
+| [Mary](https://github.com/dapize/layouter.js/blob/master/DOCS.md#mary-marx)          | `my`, `margin-y`       | `mary="10"`, `my="20"`, `margin-y="30"`                                                   | Determine the **top and bottom margin** of a node.                                                                                                                                                           |
+| [Marx](https://github.com/dapize/layouter.js/blob/master/DOCS.md#mary-marx)          | `mx`, `maring-x`       | `marx="10"`, `mx="20"`, `margin-x="30"`                                                   | Determine the **right and left margin at the same time** of a node.                                                                                                                                          |
+| [Padt](https://github.com/dapize/layouter.js/blob/master/DOCS.md#padt)               | `pt`, `padding-top`    | `padt="10"`, `pt="20"`, `padding-top="30"`                                                | Determine the **top padding** of a node.                                                                                                                                                                     |
+| [Padr](https://github.com/dapize/layouter.js/blob/master/DOCS.md#padr-padb-padl)     | `pr`, `padding-right`  | `padr="2/15"`, `pr="3/16"`, `padding-right="4/17"`                                        | Determine the **padding right** of a node.                                                                                                                                                                   |
+| [Padb](https://github.com/dapize/layouter.js/blob/master/DOCS.md#padr-padb-padl)     | `pb`, `padding-bottom` | `padb="30"`, `pb="40"`, `padding-bottom="50"`                                             | Determine the **bottom padding** of a node.                                                                                                                                                                  |
+| [Padl](https://github.com/dapize/layouter.js/blob/master/DOCS.md#padr-padb-padl)     | `pl`, `padding-left`   | `padl="3/15"`, `pl="4/16"`, `padding-left="5/17"`                                         | Determine the **left padding** of a node.                                                                                                                                                                    |
+| [Pad](https://github.com/dapize/layouter.js/blob/master/DOCS.md#pad)                 | `p`, `padding`         | `pad="20-2/15-30-3/15"`, `p="20-2/15-30-3/15"`, `padding="20-2/15-30-3/15"`               | It is a shorthand of the directives: [padt](https://github.com/dapize/layouter.js/blob/master/DOCS.md#padt), [padr, padb, y padl](https://github.com/dapize/layouter.js/blob/master/DOCS.md#padr-padb-padl). |
+| [Pady](https://github.com/dapize/layouter.js/blob/master/DOCS.md#pady-padx)          | `py`, `padding-y`      | `pady="10"`, `py="20"`, `padding-y="30"`                                                  | Determine the **padding top and bottom than the same time** of a node.                                                                                                                                       |
+| [Padx](https://github.com/dapize/layouter.js/blob/master/DOCS.md#pady-padx)          | `px`, `padding-x`      | `padx="10"`, `px="20"`, `padding-x="30`                                                   | Determine the **right and left padding** at the same time of a node.                                                                                                                                         |
+| [Flex](https://github.com/dapize/layouter.js/blob/master/DOCS.md#flex)               | `fx`                   | `flex="jc:ce ai:fs fd:co"`, `flex="jc:fe ai:fs`, `fx="align-items:center flex-wrap:wrap"` | Determine the **display Flex** of the node and its derivatives.                                                                                                                                              |
+| [Wdh](https://github.com/dapize/layouter.js/blob/master/DOCS.md#width)               | `w`, `width`           | `wdh="100"`, `w="200"`, `width="300"`                                                     | Determine the **width** of the node in pixels or other [unit of measure](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unit-of-measure).                                                         |
+| [Hgt](https://github.com/dapize/layouter.js/blob/master/DOCS.md#height)              | `h`, `height`          | `hgt="100"`, `h="200"`, `height="300"`                                                    | Determine the **height** of the node in pixels or other [unit of measure](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unit-of-measure).                                                        |
+| [Mxw](https://github.com/dapize/layouter.js/blob/master/DOCS.md#maxwidth)            | `max-width`            | `mxw="200"`, `max-width="300"`                                                            | Determine the **maximum width** of the node in pixels or other [unit of measure](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unit-of-measure).                                                 |
+| [Mxh](https://github.com/dapize/layouter.js/blob/master/DOCS.md#maxheight)           | `max-height`           | `mxh="200"`, `max-height="300"`                                                           | Determine the **maximum height** of the node in pixels or other [unit of measure](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unit-of-measure).                                                |
+| [Miw](https://github.com/dapize/layouter.js/blob/master/DOCS.md#minwidth)            | `min-width`            | `miw="300"`, `min-width="400"`                                                            | Determine the **minimum width** of the node in pixels or other [unit of measure](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unit-of-measure).                                                 |
+| [Mih](https://github.com/dapize/layouter.js/blob/master/DOCS.md#minheight)           | `min-height`           | `mih="300"`, `min-height="400"`                                                           | Determine the **high height** of the node in pixels or other [unit of measure](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unit-of-measure).                                                   |
+| [Pos](https://github.com/dapize/layouter.js/blob/master/DOCS.md#position)            | `position`             | `pos="re"`, `position="relative"`                                                         | Determine the **position** of node.                                                                                                                                                                          |
+| [T](https://github.com/dapize/layouter.js/blob/master/DOCS.md#top-right-bottom-left) | `top`                  | `t="10"`, `top="20"`                                                                      | Determine the **top** of the node in pixels or other [unit of measure](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unit-of-measure).                                                           |
+| [R](https://github.com/dapize/layouter.js/blob/master/DOCS.md#top-right-bottom-left) | `right`                | `r="10"`, `right="20"`                                                                    | Determine the **right** of the node in pixels or other [unit of measure](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unit-of-measure).                                                         |
+| [B](https://github.com/dapize/layouter.js/blob/master/DOCS.md#top-right-bottom-left) | `bottom`               | `b="10"`, `bottom="20"`                                                                   | Determine the **bottom** of the node in pixels or other [unit of measure](https://github.com/dapize/layouter.js/blob/master/DOCS.md#unit-of-measure).                                                        |
+| [L](https://github.com/dapize/layouter.js/blob/master/DOCS.md#top-right-bottom-left) | `left`                 | `l="10"`, `left="20"`                                                                     | Determine the **left** of the node in pixels or other [unit of measure](DOCS.md#unit-of-measure).                                                                                                            |
 
-## 📚 ¿Dónde obtener ayuda?
+## 📚 ¿Where I can get help?
 
-Hay una extensa documentación en el archivo [DOCS.md](https://github.com/dapize/layouter.js/blob/master/DOCS.md).
+Exist a extensive documentation here: [DOCS.md](https://github.com/dapize/layouter.js/blob/master/DOCS.md).
 
-## 🧾 Licencia
+## 🧾 Licence
 
-El código y la documentación se publican bajo la [Licencia MIT](LICENSE).
+The code and the documentation is under the [Licence MIT](LICENSE).

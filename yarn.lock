@@ -2538,10 +2538,10 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
-layouter.js@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/layouter.js/-/layouter.js-1.7.0.tgz#b92cd57163ac4f9e666447e4a8744836cc13928a"
-  integrity sha512-rRdoOM6lr910hJEcio8No1nffAINic4WGJEsl5YyH3R5mhabnS5jMbQSDW3NAlqXwpo8zj0S2OtgfjxZ+5y9cw==
+layouter.js@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/layouter.js/-/layouter.js-1.9.0.tgz#87740e67172cddba7a388ffe1908b7efbe198e82"
+  integrity sha512-cMV7hgEl5bLD771lv0dK33C/Uv1DMBBa8wC8f1LvrcK0TkzE0TqXhnr1mZHPyP3dgS6QOcgy8MuJpTN0Ga0v1w==
 
 leven@^3.1.0:
   version "3.1.0"
