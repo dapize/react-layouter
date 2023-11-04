@@ -1,6 +1,3 @@
-import { IProcessor } from 'layouter.js';
-import { createContext } from 'react';
-
 export type TDirectiveName =
   | 'd'
   | 'display'
@@ -149,10 +146,3 @@ export interface IDirectives {
   l?: string;
   left?: string;
 }
-
-const LayouterContext = createContext<null | Record<
-  TDirectiveName,
-  IProcessor['build']
->>(null);
-
-export default LayouterContext;

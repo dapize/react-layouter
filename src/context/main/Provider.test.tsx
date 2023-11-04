@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, waitFor } from '@testing-library/react';
-import Provider from '../Provider';
+import { LayouterProvider as Provider } from './Provider';
+import { describe, expect, it } from 'vitest';
 
 describe('<Provider/>', () => {
   it('Simple', () => {

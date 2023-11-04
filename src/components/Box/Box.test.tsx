@@ -1,7 +1,8 @@
 import React from 'react';
+import { describe, expect, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import Box from './Box';
-import Provider from '../Provider';
+import { LayouterProvider as Provider } from '@context/main';
+import { Box } from './Box';
 
 describe('<Box/>', () => {
   it('Simple', () => {

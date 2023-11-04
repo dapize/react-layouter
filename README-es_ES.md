@@ -23,9 +23,9 @@ Es un **componente** que proporciona el uso de la librería [Layouter.js](https:
 ## 🔧 Instalación
 
 ```js
-npm install react-layouter
+npm install layouter.js react-layouter
 // o
-yarn add react-layouter
+yarn add layouter.js react-layouter
 ```
 
 ## ✨ Uso
@@ -72,7 +72,7 @@ Son practicamente las mismas que la [librería](https://github.com/dapize/layout
 
 | Nombre                                                                               | Alias                 | Ejemplos                                                                                  | Descripción                                                                                                                                                                                                |
 | ------------------------------------------------------------------------------------ | --------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| as                                                                                   | `as`                   | `as="span"`, `as="p"`                                                                     | Define el tag HTML que se renderizará.                                                                                                                                                                  |
+| as                                                                                   | `as`                  | `as="span"`, `as="p"`                                                                     | Define el tag HTML que se renderizará.                                                                                                                                                                     |
 | [Cols](https://github.com/dapize/layouter.js/blob/master/DOCS.md#cols)               | `c`                   | `cols="13/15"`, `c="5/10"`                                                                | Determina las columnas, osea el 'width' de manera porcentual.                                                                                                                                              |
 | [d](https://github.com/dapize/layouter.js/blob/master/DOCS.md#display)               | `display`             | `d="bl"`, `display="inline"`                                                              | Determina el **display** que tendrá el nodo.                                                                                                                                                               |
 | [Mart](https://github.com/dapize/layouter.js/blob/master/DOCS.md#mart)               | `mt`, `marginTop`     | `mart="10"`, `mt="20"`, `marginTop="12"`                                                  | Determina el **margen superior** de un nodo.                                                                                                                                                               |

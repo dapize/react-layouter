@@ -23,9 +23,9 @@ Is a **component** that give us the use of the library [Layouter.js](https://git
 ## 🔧 Installation
 
 ```js
-npm install react-layouter
+npm install layouter.js react-layouter
 // o
-yarn add react-layouter
+yarn add layouter.js react-layouter
 ```
 
 ## ✨ How Use It?
