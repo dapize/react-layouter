@@ -11,8 +11,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'react-layouter',
-      fileName: 'react-layouter',
+      name: 'index',
+      fileName: 'index',
       formats: ['es', 'cjs']
     },
     rollupOptions: {
@@ -27,7 +27,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@components': path.resolve(__dirname, './src/components'),
-      '@context': path.resolve(__dirname, './src/context'),
       '@helpers': path.resolve(__dirname, './src/helpers')
     }
   }

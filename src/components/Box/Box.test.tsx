@@ -1,14 +1,14 @@
 import React from 'react';
 import { describe, expect, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { LayouterProvider as Provider } from '@context/main';
+import { Provider } from '@components/Provider';
 import { Box } from './Box';
 
 describe('<Box/>', () => {
   it('Simple', () => {
     render(
       <Provider>
-        <Box w="100" h="100">
+        <Box w="100" h={100}>
           content
         </Box>
       </Provider>
@@ -46,5 +46,16 @@ describe('<Box/>', () => {
     const node = screen.getByText('Link');
     expect(node.tagName.toLowerCase()).toEqual('a');
     expect(node.getAttribute('href')).toEqual('http://www.web.com');
+  });
+
+  it('Render Empty', () => {
+    render(
+      <Provider>
+        <Box>Empty</Box>
+      </Provider>
+    );
+    const node = screen.getByText('Empty');
+    expect(node.tagName.toLowerCase()).toEqual('div');
+    expect(node.className.length).toEqual(0);
   });
 });

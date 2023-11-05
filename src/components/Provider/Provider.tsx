@@ -1,17 +1,15 @@
-import React, { FC } from 'react';
-import layouter, { IProcessor, TDirectiveName } from 'layouter.js';
-import { LayouterContext } from './Context';
-import { TDirectiveName as TNewDirectiveName } from './Context.d';
-import { IProvider } from './Provider.d';
+import { FC } from 'react';
+import layouter, { TDirectiveName } from 'layouter.js';
+import { IProvider, TDirectiveName as TNewDirectiveName, IProcessors } from './Provider.d';
 
-export const LayouterProvider: FC<IProvider> = ({ config = {}, children }) => {
+export const Provider: FC<IProvider> = ({ config = {}, children }) => {
   const instance = layouter(window, {
     ...config,
     searchOnInit: false,
     observer: false
   });
 
-  const processors: Partial<Record<TNewDirectiveName, IProcessor['build']>> = {};
+  const processors: Partial<IProcessors> = {};
   Object.keys(instance.processors).forEach((directive) => {
     let newDirectiveName: TNewDirectiveName;
     if (directive.includes('-')) {
@@ -25,9 +23,9 @@ export const LayouterProvider: FC<IProvider> = ({ config = {}, children }) => {
     processors[newDirectiveName] = instance.processors[directive as TDirectiveName].build;
   });
 
-  return (
-    <LayouterContext.Provider value={processors as Record<TNewDirectiveName, IProcessor['build']>}>
-      {children}
-    </LayouterContext.Provider>
-  );
+  window['react-layouter'] = processors as IProcessors;
+
+  return children;
 };
+
+export const LayouterProvider = Provider;

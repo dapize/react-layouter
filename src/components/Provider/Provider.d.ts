@@ -1,3 +1,17 @@
+import { ReactNode } from 'react';
+import { IConfigUser, IProcessor } from 'layouter.js';
+
+declare global {
+  interface Window {
+    'react-layouter': IProcessors;
+  }
+}
+
+export interface IProvider {
+  config?: Partial<IConfigUser>;
+  children: ReactNode;
+}
+
 export type TDirectiveName =
   | 'd'
   | 'display'
@@ -71,6 +85,8 @@ export type TDirectiveName =
   | 'bottom'
   | 'l'
   | 'left';
+
+export type IProcessors = Record<TDirectiveName, IProcessor['build']>;
 
 export interface IDirectives {
   d?: string;

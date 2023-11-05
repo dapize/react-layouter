@@ -55,7 +55,7 @@ import { Box } from 'react-layouter';
 
 const App = () => {
   return (
-    <Box w="100" h="100" c="13/15">
+    <Box w="100" h={100} c="13/15">
       contenido
     </Box>
   );

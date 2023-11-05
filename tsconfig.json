@@ -18,8 +18,6 @@
     "paths": {
       "@components": ["components"],
       "@components/*": ["components/*"],
-      "@context": ["context"],
-      "@context/*": ["context/*"],
       "@helpers": ["helpers"],
       "@helpers/*": ["helpers/*"]
     }
