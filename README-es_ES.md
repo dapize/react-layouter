@@ -55,7 +55,7 @@ import { Box } from 'react-layouter';
 
 const App = () => {
   return (
-    <Box w="100" h={100} c="13/15">
+    <Box w="100" h={100} c="13/15" as="main">
       contenido
     </Box>
   );
@@ -65,6 +65,14 @@ export default App;
 ```
 
 **Y listo!**, eso es todo lo que necesitamos para usar el **layouter** en React. Solo usa el componente Box por todo lugar donde lo requieras.
+
+## 🚀 Demo
+
+<p align="center">
+    <img src="screenshot.png" alt="Layouter DEMO"/>
+    <br>
+    <b><a href="https://dapize.github.io/react-layouter/">⚓ LINK DEMO ⚓</a></b>
+</p>
 
 ## ⚡ Directivas
 
