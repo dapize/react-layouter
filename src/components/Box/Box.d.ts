@@ -1,5 +1,5 @@
 import { ComponentPropsWithRef, ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
-import type { IDirectives } from '@context/main';
+import { IDirectives } from '@components/Provider';
 
 export type BoxProps<T extends ElementType> = ComponentPropsWithoutRef<T> & {
   as?: T;

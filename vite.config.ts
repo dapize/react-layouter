@@ -6,7 +6,14 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: 'setupTest.ts'
+    setupFiles: 'setupTest.ts',
+    coverage: {
+      provider: 'v8',
+      clean: true,
+      all: false,
+      reporter: ['html', 'json', 'lcov', 'text'],
+      exclude: ['**/index.ts']
+    }
   },
   build: {
     lib: {
